@@ -27,3 +27,19 @@ TEST(TimeBasicTest, CreateTimeInvalidCerr){
     EXPECT_DEATH(Time* errt0 = new Time(1,0,60),"Error, input is incorrect");
 
 }
+
+TEST(TimeToStringTest, CreateTimeValidToString){
+
+    Time* t0 = new Time(1,0,0);
+
+    EXPECT_EQ(t0->to_string(), "Monday, 00:00.\n");
+
+    delete t0;
+
+    Time* t1 = new Time(7,23,14);
+
+    EXPECT_EQ(t1->to_string(), "Sunday, 23:14.\n");
+
+    delete t1;
+
+}
